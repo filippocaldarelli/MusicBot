@@ -14,8 +14,8 @@
         </repository>
         <repository>
             <id>central</id>
-            <name>bintray</name>
-            <url>https://jcenter.bintray.com</url>
+            <name>Maven Central</name>
+            <url>https://repo.maven.apache.org/maven2</url>
         </repository>
         <repository>
             <id>jitpack.io</id>
@@ -47,7 +47,7 @@
         <dependency>
             <groupId>com.jagrosh</groupId>
             <artifactId>jda-utilities</artifactId>
-            <version>3.0.5</version>
+            <version>3.0.6</version>
             <type>pom</type>
         </dependency>
 
