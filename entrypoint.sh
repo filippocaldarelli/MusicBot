@@ -1,10 +1,10 @@
 #!/bin/sh
 
-# Crea il file config.txt a partire dalle variabili d'ambiente
+# Crea il file config.txt con le stringhe tra virgolette
 cat > /app/config.txt << EOF
-token = ${TOKEN}
-owner = ${OWNER_ID}
-prefix = ${PREFIX}
+token = "${TOKEN}"
+owner = "${OWNER_ID}"
+prefix = "${PREFIX}"
 EOF
 
 # Avvia il bot
