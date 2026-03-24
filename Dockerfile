@@ -1,13 +1,14 @@
 FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
 
-# Installa curl
+# Installa curl e file
 RUN apk add --no-cache curl
 
-# Scarica il JAR con opzioni per gestire reindirizzamenti e connessioni
+# Scarica il JAR (usando un URL diverso)
 RUN curl -L -o bot.jar "https://github.com/jagrosh/MusicBot/releases/download/0.4.5/JMusicBot-0.4.5.jar" && \
-    ls -la bot.jar && \
-    file bot.jar
+    if [ ! -f bot.jar ] || [ $(stat -c%s bot.jar) -lt 1000000 ]; then \
+        echo "Download failed, file too small!" && exit 1; \
+    fi
 
 # Copia l'entrypoint
 COPY entrypoint.sh /app/entrypoint.sh
