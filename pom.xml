@@ -35,11 +35,6 @@
             <name>Lavalink Repository</name>
             <url>https://maven.lavalink.dev/releases</url>
         </repository>
-        <repository>
-            <id>jagrosh-repo</id>
-            <name>Jagrosh Repository</name>
-            <url>https://maven.jagrosh.com</url>
-        </repository>
     </repositories>
 
     <dependencies>
@@ -48,12 +43,6 @@
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
             <version>4.4.1_353</version>
-        </dependency>
-        <dependency>
-            <groupId>com.jagrosh</groupId>
-            <artifactId>jda-utilities</artifactId>
-            <version>3.0.6</version>
-            <type>pom</type>
         </dependency>
 
         <!-- Music Dependencies -->
