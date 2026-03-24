@@ -1,0 +1,23 @@
+version: '3'
+services:
+  lavalink:
+    image: ghcr.io/lavalink-devs/lavalink:latest
+    ports:
+      - "2333:2333"
+    environment:
+      - SERVER_PORT=2333
+      - LAVALINK_SERVER_PASSWORD=youshallnotpass
+    volumes:
+      - ./application.yml:/opt/Lavalink/application.yml
+
+  musicbot:
+    image: eclipse-temurin:17-jdk-alpine
+    working_dir: /app
+    command: sh -c "wget -O LavalinkBot.jar https://github.com/topi314/LavaSrc/releases/download/2.0.0/LavaSrc-2.0.0.jar && java -jar LavalinkBot.jar"
+    environment:
+      - TOKEN=IL_TUO_TOKEN_DISCORD
+      - LAVALINK_HOST=lavalink
+      - LAVALINK_PORT=2333
+      - LAVALINK_PASSWORD=youshallnotpass
+    depends_on:
+      - lavalink
